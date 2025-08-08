@@ -1,28 +1,29 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 type Direction = "TOP" | "LEFT" | "BOTTOM" | "RIGHT";
 
-export function HoverBorderGradient({
+type HoverBorderGradientProps<Tag extends React.ElementType = 'button'> = {
+  as?: Tag;
+  containerClassName?: string;
+  className?: string;
+  duration?: number;
+  clockwise?: boolean;
+} & React.ComponentPropsWithRef<Tag> & { children?: React.ReactNode };
+
+export function HoverBorderGradient<Tag extends React.ElementType = 'button'>({
   children,
   containerClassName,
   className,
-  as: Tag = "button",
+  as,
   duration = 1,
   clockwise = true,
   ...props
-}: React.PropsWithChildren<
-  {
-    as?: React.ElementType;
-    containerClassName?: string;
-    className?: string;
-    duration?: number;
-    clockwise?: boolean;
-  } & React.HTMLAttributes<HTMLElement>
->) {
+}: HoverBorderGradientProps<Tag>) {
+  const TagComponent = as || 'button';
   const [hovered, setHovered] = useState<boolean>(false);
   const [direction, setDirection] = useState<Direction>("TOP");
 
@@ -48,16 +49,33 @@ export function HoverBorderGradient({
     "radial-gradient(75% 181.15942028985506% at 50% 50%, #000 0%, rgba(255, 255, 255, 0) 100%)";
 
   useEffect(() => {
+    let animationFrameId: number;
+    let start: number | null = null;
+
+    const rotateDirectionFn = () => {
+      const directions: Direction[] = ["TOP", "LEFT", "BOTTOM", "RIGHT"];
+      const currentIndex = directions.indexOf(direction);
+      const nextIndex = clockwise
+        ? (currentIndex - 1 + directions.length) % directions.length
+        : (currentIndex + 1) % directions.length;
+      return directions[nextIndex];
+    };
+
+    const animate = (timestamp: number) => {
+      if (!start) start = timestamp;
+      const elapsed = (timestamp - start) / 1000;
+      setDirection((prev) => rotateDirectionFn());
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
     if (!hovered) {
-      const interval = setInterval(() => {
-        setDirection((prevState) => rotateDirection(prevState));
-      }, duration * 1000);
-      return () => clearInterval(interval);
+      animationFrameId = requestAnimationFrame(animate);
     }
-  }, [hovered]);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [duration, clockwise, direction, hovered]);
   return (
-    <Tag
-      onMouseEnter={(event: React.MouseEvent<HTMLDivElement>) => {
+    <TagComponent
+      onMouseEnter={() => {
         setHovered(true);
       }}
       onMouseLeave={() => setHovered(false)}
@@ -94,6 +112,6 @@ export function HoverBorderGradient({
         transition={{ ease: "linear", duration: duration ?? 1 }}
       />
       <div className="bg-black absolute z-1 flex-none inset-[2px] rounded-[100px]" />
-    </Tag>
+    </TagComponent>
   );
 }

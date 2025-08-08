@@ -7,8 +7,9 @@ import { HoverBorderGradient } from "@/components/ui/hover-border-gradient"
 import { PointerHighlight } from "@/components/ui/pointer-highlight"
 import { Card, CardContent } from "@/components/ui/card"
 import { PinContainer } from "@/components/ui/3d-pin"
-import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card"
+
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 const projects = [
   {
@@ -17,7 +18,7 @@ const projects = [
     subtitle: "Next.js • TypeScript • Stripe",
     description: "A modern e-commerce platform with seamless checkout experience and inventory management.",
     longDescription: "Revolutionary e-commerce solution featuring AI-powered recommendations, real-time inventory tracking, and seamless payment processing. Built with cutting-edge technology stack for optimal performance.",
-    image: "/modern-ecommerce-interface.png",
+    image: "/apple.png",
     tags: ["React", "Next.js", "TypeScript", "Stripe"],
     github: "https://github.com",
     live: "https://example.com",
@@ -31,7 +32,7 @@ const projects = [
     subtitle: "React • Node.js • MongoDB",
     description: "Collaborative task management with real-time updates and team collaboration features.",
     longDescription: "Enterprise-grade task management platform with advanced collaboration tools, real-time synchronization, and intelligent project analytics.",
-    image: "/task-management-dashboard.png",
+    image: "/apple.png",
     tags: ["React", "Node.js", "MongoDB", "Socket.io"],
     github: "https://github.com",
     live: "https://example.com",
@@ -93,6 +94,8 @@ const projects = [
   }
 ]
 
+import Navbar from "@/components/ui/Navbar";
+
 export default function Component() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isLoaded, setIsLoaded] = useState(false)
@@ -109,7 +112,14 @@ export default function Component() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white overflow-hidden">
+    <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, ease: 'easeOut' }}
+      >
+        <Navbar />
+        <div className="min-h-screen bg-white overflow-hidden">
       {/* Animated Background Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <div 
@@ -128,15 +138,15 @@ export default function Component() {
 
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6">
-        <div className={`max-w-5xl mx-auto text-center transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <section className="relative pt-16 sm:pt-24 lg:pt-32 pb-8 sm:pb-16 lg:pb-20 px-2 sm:px-4 lg:px-6">
+        <div className={`max-w-5xl mx-auto flex flex-col items-center text-center transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           
-          <h1 className="text-6xl md:text-8xl font-black text-gray-900 mb-8 tracking-tight leading-none">
+          <h1 className="text-3xl sm:text-5xl md:text-8xl font-black text-gray-900 mb-4 sm:mb-8 tracking-tight leading-none">
   <PointerHighlight>
-    Digital Creations Showcase
+    Project Gallery
   </PointerHighlight>
 </h1>
-<p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
+<p className="text-base sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-12">
   Explore my portfolio of digital products, web apps, and creative solutions—built with a passion for design, technology, and innovation.
 </p>
           
@@ -144,7 +154,7 @@ export default function Component() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-20 px-6">
+      <section className="py-8 sm:py-16 lg:py-20 px-2 sm:px-4 lg:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -153,9 +163,9 @@ export default function Component() {
             <div className="w-24 h-1 bg-gray-900 mx-auto rounded-full" />
           </div>
           
-          <div className="space-y-40">
+          <div className="space-y-12 lg:space-y-40">
             {featuredProjects.map((project, index) => (
-              <div key={project.id} className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-20`}>
+              <div key={project.id} className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 lg:gap-20`}>
                 <div className="flex-1 relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-gray-100 to-gray-50 rounded-3xl blur-xl opacity-50" />
                   <PinContainer
@@ -195,25 +205,25 @@ export default function Component() {
                 
                 <div className="flex-1 space-y-8">
                   <div>
-                    <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full px-3 py-1 mb-4 text-xs font-medium text-gray-600">
+                    <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full px-2 sm:px-3 py-1 mb-2 sm:mb-4 text-xs font-medium text-gray-600">
                       #{index + 1} Featured Project
                     </div>
-                    <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                    <h3 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-4 leading-tight">
                       {project.title}
                     </h3>
-                    <p className="text-xl text-gray-500 mb-6 font-medium">
+                    <p className="text-base sm:text-xl text-gray-500 mb-4 sm:mb-6 font-medium">
                       {project.subtitle}
                     </p>
-                    <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                    <p className="text-sm sm:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-6">
                       {project.longDescription}
                     </p>
                   </div>
                   
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1 sm:gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors cursor-default"
+                        className="px-2 sm:px-4 py-1 sm:py-2 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm font-medium hover:bg-gray-200 transition-colors cursor-default"
                       >
                         {tag}
                       </span>
@@ -223,7 +233,7 @@ export default function Component() {
                   <div className="flex gap-4">
                     <HoverBorderGradient
   as="a"
-  className="rounded-full bg-white text-black flex items-center gap-2 px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+  className="rounded-full bg-white text-black flex items-center gap-2 px-4 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
   {...{
     href: project.live,
     target: "_blank",
@@ -234,7 +244,7 @@ export default function Component() {
 </HoverBorderGradient>
                     <HoverBorderGradient
   as="a"
-  className="rounded-full bg-white text-black flex items-center gap-2 px-8 py-3 text-lg font-semibold border-2 hover:bg-gray-50 transition-all duration-300 hover:scale-105"
+  className="rounded-full bg-white text-black flex items-center gap-2 px-4 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-semibold border-2 hover:bg-gray-50 transition-all duration-300 hover:scale-105"
   {...{
     href: project.github,
     target: "_blank",
@@ -252,163 +262,91 @@ export default function Component() {
       </section>
 
       {/* Other Projects Grid */}
-      <section className="py-20 px-6 relative">
+      <section className="py-8 sm:py-16 lg:py-20 px-2 sm:px-4 lg:px-6 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/30 to-white" />
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               More Projects
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">
               Explore additional projects showcasing diverse technologies and creative solutions.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
             {otherProjects.map((project, index) => (
-              <CardContainer key={project.id} className="inter-var">
-                <CardBody className="bg-white relative group/card border-gray-200 w-auto sm:w-[24rem] h-auto rounded-2xl p-8 border-2 shadow-lg hover:shadow-2xl transition-all duration-500">
-                  <div className="absolute top-4 right-4 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
-                    <div className="flex gap-2 text-xs text-gray-500">
-                      <span className="flex items-center gap-1">
-                        <Eye className="w-3 h-3" />
-                        {project.stats.views}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Star className="w-3 h-3" />
-                        {project.stats.stars}
-                      </span>
-                    </div>
-                  </div>
-                  
-                  <CardItem
-                    translateZ="50"
-                    className="text-2xl font-bold text-gray-900 mb-3"
-                  >
-                    {project.title}
-                  </CardItem>
-                  
-                  <CardItem
-                    as="p"
-                    translateZ="60"
-                    className="text-gray-500 text-sm mb-3 font-medium"
-                  >
-                    {project.subtitle}
-                  </CardItem>
-                  
-                  <CardItem translateZ="100" className="w-full mt-2 mb-6">
+              <PinContainer
+                key={project.id}
+                title={project.title}
+                href={project.live}
+                className="inter-var"
+              >
+                <div className="bg-white relative group/card border-gray-200 w-auto sm:w-[24rem] h-auto rounded-2xl p-4 sm:p-6 lg:p-8 border-2 shadow-lg hover:shadow-2xl transition-all duration-500">
+                  <div className="text-2xl font-bold text-gray-900 mb-3">{project.title}</div>
+                  <div className="text-gray-500 text-sm mb-3 font-medium">{project.subtitle}</div>
+                  <div className="w-full mt-2 mb-6">
                     <div className="relative overflow-hidden rounded-xl group">
                       <Image
-                        src="/project.png"
-                        height="200"
-                        width="400"
+                        src={project.image}
+                        height={200}
+                        width={400}
                         className="h-44 w-full object-cover transition-transform duration-700 group-hover:scale-110"
                         alt={project.title}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
-                  </CardItem>
-                  
-                  <CardItem
-                    as="p"
-                    translateZ="60"
-                    className="text-gray-700 mb-6 text-sm leading-relaxed"
-                  >
-                    {project.description}
-                  </CardItem>
-                  
+                  </div>
+                  <div className="text-gray-700 mb-6 text-sm leading-relaxed">{project.description}</div>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.slice(0, 3).map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium"
+                        className="px-2 sm:px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
-                  
                   <div className="flex gap-3">
-                    <CardItem
-                      translateZ={20}
-                      as="a"
-                      href={project.live}
-                      target="_blank"
-                      className="flex-1 px-4 py-3 rounded-xl text-sm font-semibold text-white bg-gray-900 hover:bg-gray-800 transition-all duration-300 hover:scale-105 text-center"
-                    >
-                      View Live <ExternalLink className="w-3 h-3 inline ml-1" />
-                    </CardItem>
-                    <CardItem
-                      translateZ={20}
-                      as="a"
+                    <a
                       href={project.github}
                       target="_blank"
-                      className="px-4 py-3 rounded-xl text-sm font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 transition-all duration-300 hover:scale-105"
+                      rel="noopener noreferrer"
+                      className="px-4 py-3 rounded-xl text-sm font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 transition-all duration-300 hover:scale-105 flex items-center gap-2"
                     >
                       <Github className="w-4 h-4" />
-                    </CardItem>
+                    </a>
                   </div>
-                </CardBody>
-              </CardContainer>
+                </div>
+              </PinContainer>
             ))}
           </div>
         </div>
       </section>
 
-
       {/* CTA Section */}
-      <section className="py-32 px-6 relative">
+      <section className="py-12 sm:py-24 lg:py-32 px-2 sm:px-4 lg:px-6 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-white to-gray-50" />
         <div className="max-w-5xl mx-auto text-center relative">
-          <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full px-4 py-2 mb-8 text-sm font-medium text-gray-700">
+          <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full px-2 sm:px-4 py-1 sm:py-2 mb-4 sm:mb-8 text-xs sm:text-sm font-medium text-gray-700">
             <Zap className="w-4 h-4" />
             Ready to Collaborate
           </div>
-          <h2 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-            Let's Create
+          <h2 className="text-2xl sm:text-5xl md:text-7xl font-bold text-gray-900 mb-4 sm:mb-8 leading-tight">
+            Let&apos;s Create
             <span className="block">Something Amazing</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Have a groundbreaking idea? Let's collaborate to bring your vision to life with cutting-edge technology and award-winning design.
+          <p className="text-base sm:text-xl text-gray-600 mb-6 sm:mb-12 max-w-3xl mx-auto leading-relaxed">
+            Have a groundbreaking idea? Let&apos;s collaborate to bring your vision to life with cutting-edge technology and award-winning design.
           </p>
-          <HoverBorderGradient
-  as="a"
-  className="rounded-full bg-white text-black flex items-center gap-3 px-12 py-4 text-lg font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
-  {...{
-    href: "/contact"
-  }}
->
-  Start a Project <ArrowRight className="w-5 h-5" />
-</HoverBorderGradient>
+
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-200 py-16 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-600 mb-6 md:mb-0 text-center md:text-left">
-  <div className="text-2xl font-bold text-gray-900 mb-2">Portfolio</div>
-  <div>© 2025 All rights reserved. Crafted with passion.</div>
-</div>
-            <div className="flex space-x-6">
-              <Link href="https://github.com" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-110">
-                <Github className="w-6 h-6" />
-              </Link>
-              <Link href="https://linkedin.com" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-110">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd" />
-                </svg>
-              </Link>
-              <Link href="mailto:hello@example.com" className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-110">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+
     </div>
+      </motion.div>
+    </>
   )
 }

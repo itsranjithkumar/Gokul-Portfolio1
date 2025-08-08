@@ -2,14 +2,19 @@
 
 import { useState, useEffect } from 'react'
 import { motion, useScroll } from 'framer-motion'
-import { ArrowUpRight, Mail, Github, Linkedin, Download } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
+import { FloatingDock } from '@/components/ui/floating-dock'
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconMail,
+} from '@tabler/icons-react'
 
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollY, setScrollY] = useState(0)
-  const { scrollYProgress } = useScroll()
+  
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -17,13 +22,13 @@ export default function Portfolio() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-    setIsMenuOpen(false)
-  }
-
   return (
-    <div className="min-h-screen bg-gray-50 text-black font-mono">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.2, ease: 'easeOut' }}
+    >
+      <div className="min-h-screen bg-gray-50 text-black font-mono">
       {/* Navigation */}
       <motion.nav 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -40,29 +45,35 @@ export default function Portfolio() {
               className="text-lg font-bold tracking-wider"
               whileHover={{ scale: 1.05 }}
             >
-              MSR.
+              GK.
             </motion.div>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide">
-              {[
-                { name: '[ABOUT ME]', id: 'about' },
-                { name: '[PORTFOLIO]', id: 'portfolio' },
-                { name: '[CONTACT ME]', id: 'contact' },
-                { name: '[LET\'S CONNECT]', id: 'connect' }
-              ].map((item, index) => (
-                <motion.button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.id)}
-                  className="hover:text-gray-600 transition-colors duration-300 relative group"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -2 }}
-                >
-                  {item.name}
-                </motion.button>
-              ))}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0 }}
+                whileHover={{ y: -2 }}
+              >
+                <a href="/About" className="hover:text-gray-600 transition-colors duration-300 relative group">[ABOUT ME]</a>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                whileHover={{ y: -2 }}
+              >
+                <a href="/Project" className="hover:text-gray-600 transition-colors duration-300 relative group">[PROJECTS]</a>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                whileHover={{ y: -2 }}
+              >
+                <a href="/Contact" className="hover:text-gray-600 transition-colors duration-300 relative group">[CONTACT ME]</a>
+              </motion.div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -86,20 +97,27 @@ export default function Portfolio() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
             >
-              {[
-                { name: '[ABOUT ME]', id: 'about' },
-                { name: '[PORTFOLIO]', id: 'portfolio' },
-                { name: '[CONTACT ME]', id: 'contact' },
-                { name: '[LET\'S CONNECT]', id: 'connect' }
-              ].map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left py-2 text-sm font-medium hover:text-gray-600 transition-colors"
-                >
-                  {item.name}
-                </button>
-              ))}
+              <a
+                href="/About"
+                className="block w-full text-left py-2 text-sm font-medium hover:text-gray-600 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                [ABOUT ME]
+              </a>
+              <a
+                href="/Project"
+                className="block w-full text-left py-2 text-sm font-medium hover:text-gray-600 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                [PROJECTS]
+              </a>
+              <a
+                href="/Contact"
+                className="block w-full text-left py-2 text-sm font-medium hover:text-gray-600 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                [CONTACT ME]
+              </a>
             </motion.div>
           )}
         </div>
@@ -140,30 +158,28 @@ export default function Portfolio() {
               </motion.div>
 
 
-              {/* Social Links */}
-              <motion.div 
-                className="flex gap-6"
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 1 }}
-              >
-                {[
-                  { icon: Github, href: '#', label: 'GitHub' },
-                  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-                  { icon: Mail, href: 'mailto:msranjithkumar@gmail.com', label: 'Email' }
-                ].map(({ icon: Icon, href, label }) => (
-                  <motion.a
-                    key={label}
-                    href={href}
-                    className="p-3 hover:bg-gray-200 rounded-full transition-colors"
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    aria-label={label}
-                  >
-                    <Icon className="w-5 h-5" />
-                  </motion.a>
-                ))}
-              </motion.div>
+              {/* Floating Dock Social Links */}
+              <div className="mt-8">
+                <FloatingDock
+                  items={[
+                    {
+                      title: 'GitHub',
+                      icon: <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+                      href: 'https://github.com/your-github',
+                    },
+                    {
+                      title: 'LinkedIn',
+                      icon: <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+                      href: 'https://linkedin.com/in/your-linkedin',
+                    },
+                    {
+                      title: 'Email',
+                      icon: <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+                      href: 'mailto:gokulkrishan@gmail.com',
+                    },
+                  ]}
+                />
+              </div>
             </div>
 
             {/* Right Column - Profile Image */}
@@ -241,10 +257,10 @@ export default function Portfolio() {
                   AVAILABLE FOR FREELANCE
                 </div>
                 <a 
-                  href="mailto:msranjithkumar@gmail.com" 
+                  href="mailto:gokulkrishan@gmail.com" 
                   className="text-sm font-medium hover:text-gray-600 transition-colors underline decoration-2 underline-offset-4"
                 >
-                  MSRANJITHKUMAR@GMAIL.COM
+                  GOKULKRISHAN@GMAIL.COM
                 </a>
               </motion.div>
             </div>
@@ -252,5 +268,6 @@ export default function Portfolio() {
         </div>
       </section>
     </div>
+      </motion.div>
   )
 }

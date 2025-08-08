@@ -17,7 +17,7 @@ export const TextGenerateEffect = ({
   inView?: boolean;
 }) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
+  const wordsArray = words.split(" ");
   useEffect(() => {
     if (!inView) {
       animate(
