@@ -368,7 +368,7 @@ export default function Component() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-16">
             {/* Core Expertise */}
-            <Card className="p-4 sm:p-6 lg:p-8 border-0 shadow-sm bg-white">
+            <Card className="p-4 sm:p-6 lg:p-8 border-0 bg-white shadow-[6px_6px_0_0_rgba(0,0,0,0.18)]">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
                   <Brain className="w-6 h-6 text-white" />
@@ -377,46 +377,24 @@ export default function Component() {
               </div>
               <CardContent className="p-0 space-y-4">
                 <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-700">API Development (REST/gRPC)</span>
-                    <div className="flex gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <div key={i} className="w-2 h-2 bg-gray-900 rounded-full"></div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-700">Distributed Systems</span>
-                    <div className="flex gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <div key={i} className="w-2 h-2 bg-gray-900 rounded-full"></div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-700">Cloud Infrastructure (AWS/GCP)</span>
-                    <div className="flex gap-1">
-                      {[...Array(4)].map((_, i) => (
-                        <div key={i} className="w-2 h-2 bg-gray-900 rounded-full"></div>
-                      ))}
-                      <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-700">MLOps & Automation</span>
-                    <div className="flex gap-1">
-                      {[...Array(4)].map((_, i) => (
-                        <div key={i} className="w-2 h-2 bg-gray-900 rounded-full"></div>
-                      ))}
-                      <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                    </div>
-                  </div>
+                  <div className="flex items-center">
+  <span className="text-sm text-gray-700">API Development (REST/gRPC)</span>
+</div>
+                  <div className="flex items-center">
+  <span className="text-sm text-gray-700">Distributed Systems</span>
+</div>
+                  <div className="flex items-center">
+  <span className="text-sm text-gray-700">Cloud Infrastructure (AWS/GCP)</span>
+</div>
+                  <div className="flex items-center">
+  <span className="text-sm text-gray-700">MLOps & Automation</span>
+</div>
                 </div>
               </CardContent>
             </Card>
 
             {/* Data Science */}
-            <Card className="p-4 sm:p-6 lg:p-8 border-0 shadow-sm bg-white">
+            <Card className="p-4 sm:p-6 lg:p-8 border-0 bg-white shadow-[6px_6px_0_0_rgba(0,0,0,0.18)]">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
                   <Database className="w-6 h-6 text-white" />
@@ -425,47 +403,24 @@ export default function Component() {
               </div>
               <CardContent className="p-0 space-y-4">
                 <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-700">Database Design</span>
-                    <div className="flex gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <div key={i} className="w-2 h-2 bg-gray-900 rounded-full"></div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-700">Streaming Data Pipelines</span>
-                    <div className="flex gap-1">
-                      {[...Array(4)].map((_, i) => (
-                        <div key={i} className="w-2 h-2 bg-gray-900 rounded-full"></div>
-                      ))}
-                      <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-700">Big Data (Spark, Kafka)</span>
-                    <div className="flex gap-1">
-                      {[...Array(4)].map((_, i) => (
-                        <div key={i} className="w-2 h-2 bg-gray-900 rounded-full"></div>
-                      ))}
-                      <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-700">Monitoring & Observability</span>
-                    <div className="flex gap-1">
-                      {[...Array(4)].map((_, i) => (
-                        <div key={i} className="w-2 h-2 bg-gray-900 rounded-full"></div>
-                      ))}
-                      <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                    </div>
-                  </div>
+                  <div className="flex items-center">
+  <span className="text-sm text-gray-700">Database Design</span>
+</div>
+                  <div className="flex items-center">
+  <span className="text-sm text-gray-700">Streaming Data Pipelines</span>
+</div>
+                  <div className="flex items-center">
+  <span className="text-sm text-gray-700">Big Data (Spark, Kafka)</span>
+</div>
+                  <div className="flex items-center">
+  <span className="text-sm text-gray-700">Monitoring & Observability</span>
+</div>
                 </div>
               </CardContent>
             </Card>
 
             {/* Engineering */}
-            <Card className="p-4 sm:p-6 lg:p-8 border-0 shadow-sm bg-white">
+            <Card className="p-4 sm:p-6 lg:p-8 border-0 bg-white shadow-[6px_6px_0_0_rgba(0,0,0,0.18)]">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
                   <Code className="w-6 h-6 text-white" />
@@ -474,41 +429,18 @@ export default function Component() {
               </div>
               <CardContent className="p-0 space-y-4">
                 <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-700">Python</span>
-                    <div className="flex gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <div key={i} className="w-2 h-2 bg-gray-900 rounded-full"></div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-700">Kubernetes & Docker</span>
-                    <div className="flex gap-1">
-                      {[...Array(4)].map((_, i) => (
-                        <div key={i} className="w-2 h-2 bg-gray-900 rounded-full"></div>
-                      ))}
-                      <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-700">CI/CD & DevOps</span>
-                    <div className="flex gap-1">
-                      {[...Array(4)].map((_, i) => (
-                        <div key={i} className="w-2 h-2 bg-gray-900 rounded-full"></div>
-                      ))}
-                      <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-700">System Design</span>
-                    <div className="flex gap-1">
-                      {[...Array(4)].map((_, i) => (
-                        <div key={i} className="w-2 h-2 bg-gray-900 rounded-full"></div>
-                      ))}
-                      <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                    </div>
-                  </div>
+                  <div className="flex items-center">
+  <span className="text-sm text-gray-700">Python</span>
+</div>
+                  <div className="flex items-center">
+  <span className="text-sm text-gray-700">Kubernetes & Docker</span>
+</div>
+                  <div className="flex items-center">
+  <span className="text-sm text-gray-700">CI/CD & DevOps</span>
+</div>
+                  <div className="flex items-center">
+  <span className="text-sm text-gray-700">System Design</span>
+</div>
                 </div>
               </CardContent>
             </Card>

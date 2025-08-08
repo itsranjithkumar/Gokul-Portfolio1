@@ -276,51 +276,53 @@ export default function Component() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
             {otherProjects.map((project, index) => (
-              <PinContainer
-                key={project.id}
-                title={project.title}
-                href={project.live}
-                className="inter-var"
-              >
-                <div className="bg-white relative group/card border-gray-200 w-auto sm:w-[24rem] h-auto rounded-2xl p-4 sm:p-6 lg:p-8 border-2 shadow-lg hover:shadow-2xl transition-all duration-500">
-                  <div className="text-2xl font-bold text-gray-900 mb-3">{project.title}</div>
-                  <div className="text-gray-500 text-sm mb-3 font-medium">{project.subtitle}</div>
-                  <div className="w-full mt-2 mb-6">
-                    <div className="relative overflow-hidden rounded-xl group">
-                      <Image
-                        src={project.image}
-                        height={200}
-                        width={400}
-                        className="h-44 w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        alt={project.title}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                  </div>
-                  <div className="text-gray-700 mb-6 text-sm leading-relaxed">{project.description}</div>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.slice(0, 3).map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 sm:px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex gap-3">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-3 rounded-xl text-sm font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 transition-all duration-300 hover:scale-105 flex items-center gap-2"
-                    >
-                      <Github className="w-4 h-4" />
-                    </a>
-                  </div>
-                </div>
-              </PinContainer>
-            ))}
+  <Card key={project.id} className="w-auto sm:w-[24rem] h-auto flex flex-col justify-between">
+    <CardContent className="bg-white relative border-gray-200 rounded-2xl p-6 flex flex-col h-full">
+      <div>
+        <div className="text-2xl font-bold text-gray-900 mb-1">
+          {project.title}
+        </div>
+        <div className="text-gray-400 text-xs font-semibold mb-4 tracking-wide">
+          {project.subtitle}
+        </div>
+        <div className="w-full flex justify-center items-center mb-6">
+          <div className="bg-gray-50 rounded-xl p-4 flex items-center justify-center w-full shadow-sm">
+            <Image
+              src={project.image}
+              height={120}
+              width={220}
+              className="object-contain h-24 w-full"
+              alt={project.title}
+            />
+          </div>
+        </div>
+        <div className="text-gray-700 mb-6 text-sm leading-relaxed">
+          {project.description}
+        </div>
+        <div className="flex flex-wrap gap-2 mb-6">
+          {project.tags.slice(0, 3).map((tag) => (
+            <span
+              key={tag}
+              className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className="flex justify-end mt-auto">
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-3 py-2 rounded-full text-sm font-semibold text-gray-900 bg-gray-100 hover:bg-gray-200 transition-all duration-300 hover:scale-105 flex items-center gap-2 shadow-sm"
+        >
+          <Github className="w-4 h-4" />
+        </a>
+      </div>
+    </CardContent>
+  </Card>
+))}
           </div>
         </div>
       </section>

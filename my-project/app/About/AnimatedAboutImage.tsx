@@ -11,9 +11,9 @@ interface AnimatedAboutImageProps {
 
 export function AnimatedAboutImage({ src, alt, className }: AnimatedAboutImageProps) {
   return (
-    <div className={`relative group w-64 h-80 md:w-80 md:h-[26rem] ${className || ""}`}>
+    <div className={`relative group w-64 h-80 md:w-80 md:h-[26rem] ${className || ""} shadow-[6px_6px_0_0_rgba(0,0,0,0.18)] rounded-2xl bg-white border`}>
       <motion.div
-        className="w-full h-full rounded-3xl overflow-hidden shadow-2xl"
+        className="w-full h-full rounded-3xl overflow-hidden"
         initial={{ scale: 1 }}
         whileHover={{ scale: 1.06 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
