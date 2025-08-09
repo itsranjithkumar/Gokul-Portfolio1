@@ -55,10 +55,12 @@ export default function Component() {
                 </Badge>
               </div>
               <div className="flex gap-4">
-                <Button className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-full">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Get in touch
-                </Button>
+                <a href="mailto:gokul.email@example.com">
+                  <Button className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-full">
+                    <Mail className="w-4 h-4 mr-2" />
+                    Get in touch
+                  </Button>
+                </a>
                 <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3 rounded-full">
                   View my work
                 </Button>
@@ -69,7 +71,7 @@ export default function Component() {
                 <div className="absolute inset-0 bg-gradient-to-r from-gray-200 to-gray-300 rounded-3xl transform rotate-3" />
                 <div className="absolute inset-0 bg-gradient-to-r from-gray-300 to-gray-400 rounded-3xl transform -rotate-2" />
                 <Image
-                  src="/gokul.png"
+                  src="/image.png"
                   alt="Profile"
                   width={500}
                   height={600}
@@ -163,77 +165,42 @@ export default function Component() {
                 <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center">
                   <GraduationCap className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-light text-black">Education (AI & Backend)</h3>
+                <h3 className="text-3xl font-light text-black">Education</h3>
               </div>
 
               <div className="space-y-8">
-                {/* PhD */}
+                {/* B.S. in Data Science and Applications */}
                 <div className="relative pl-8 border-l-2 border-gray-900">
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-gray-900 rounded-full"></div>
                   <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h4 className="text-xl font-semibold text-gray-900">PhD in Computer Science</h4>
-                        <p className="text-gray-600 font-medium">Stanford University</p>
-                        <span className="text-xs text-gray-500">Focus: Distributed Systems, Scalable AI Infrastructure</span>
+                        <h4 className="text-xl font-semibold text-gray-900">B.S. in Data Science and Applications</h4>
+                        <p className="text-gray-600 font-medium">Indian Institute of Technology, Madras</p>
+                        <span className="text-xs text-gray-500">Jan 2021 - Present</span>
                       </div>
-                      <Badge variant="outline" className="text-xs">2014-2018</Badge>
+                      <Badge variant="outline" className="text-xs">CGPA: 8.5/10</Badge>
                     </div>
                     <p className="text-sm text-gray-700 mb-3">
-                      <strong>Dissertation:</strong> &quot;Deep Learning for Recommendation Systems: 
-                      A Novel Approach to Personalization&quot;
+                      Coursework in Data Science, Machine Learning, and Application Development.
                     </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Machine Learning</span>
-                      <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Deep Learning</span>
-                      <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Recommendation Systems</span>
-                    </div>
                   </div>
                 </div>
-
-                {/* Masters */}
+                {/* B.E. in Mechanical Engineering */}
                 <div className="relative pl-8 border-l-2 border-gray-400">
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-gray-400 rounded-full"></div>
                   <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h4 className="text-xl font-semibold text-gray-900">MS in Machine Learning</h4>
-                        <p className="text-gray-600 font-medium">MIT</p>
-                        <span className="text-xs text-gray-500">Focus: MLOps, Model Deployment, Cloud Engineering</span>
+                        <h4 className="text-xl font-semibold text-gray-900">B.E. in Mechanical Engineering</h4>
+                        <p className="text-gray-600 font-medium">Anna University, Chennai</p>
+                        <span className="text-xs text-gray-500">Aug 2016 - June 2021</span>
                       </div>
-                      <Badge variant="outline" className="text-xs">2012-2014</Badge>
+                      <Badge variant="outline" className="text-xs">CGPA: 7.9/10</Badge>
                     </div>
                     <p className="text-sm text-gray-700 mb-3">
-                      Focus on Neural Networks, Optimization, and Statistical Learning Theory
+                      Studied core engineering, mathematics, and computational methods.
                     </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Neural Networks</span>
-                      <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Optimization</span>
-                      <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Statistics</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bachelor's */}
-                <div className="relative pl-8 border-l-2 border-gray-300">
-                  <div className="absolute -left-2 top-0 w-4 h-4 bg-gray-300 rounded-full"></div>
-                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <h4 className="text-xl font-semibold text-gray-900">BS in Computer Science</h4>
-                        <p className="text-gray-600 font-medium">UC Berkeley</p>
-                        <span className="text-xs text-gray-500">Focus: Backend Engineering, Algorithms</span>
-                      </div>
-                      <Badge variant="outline" className="text-xs">2008-2012</Badge>
-                    </div>
-                    <p className="text-sm text-gray-700 mb-3">
-                      Summa Cum Laude, Phi Beta Kappa Honor Society
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Algorithms</span>
-                      <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Data Structures</span>
-                      <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">Software Engineering</span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -245,106 +212,88 @@ export default function Component() {
                 <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center">
                   <Briefcase className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-light text-black">Experience (AI Backend)</h3>
+                <h3 className="text-3xl font-light text-black">Experience</h3>
               </div>
 
               <div className="space-y-8">
-                {/* Current Role */}
+                {/* Senior Software Engineer - Articence Inc */}
                 <div className="relative pl-8 border-l-2 border-gray-900">
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-gray-900 rounded-full"></div>
                   <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h4 className="text-xl font-semibold text-gray-900">Senior AI Backend Engineer</h4>
+                        <h4 className="text-xl font-semibold text-gray-900">Senior Software Engineer</h4>
                         <p className="text-gray-600 font-medium flex items-center gap-2">
                           <Building className="w-4 h-4" />
-                          Google AI
+                          Articence Inc
                         </p>
+                        <span className="text-xs text-gray-500">California (Remote)</span>
                       </div>
-                      <Badge className="bg-green-100 text-green-800 text-xs">2020-Present</Badge>
+                      <Badge className="bg-green-100 text-green-800 text-xs">Sept 2024 - Present</Badge>
                     </div>
                     <p className="text-sm text-gray-700 mb-4">
-                      Led the design and deployment of large-scale, distributed backend systems for AI-powered recommendations serving 50M+ users daily. Developed robust APIs and automated ML pipelines that improved reliability and reduced operational overhead.
+                      Handling end to end integrations and stabilizing the development life cycle for the team. Working on CI/CD, optimizing the code, bug fixing and deployment to Production.
                     </p>
-                    <div className="space-y-2 mb-4">
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <Star className="w-3 h-3" />
-                        Led backend/infra team of 8 engineers across 3 time zones
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <TrendingUp className="w-3 h-3" />
-                        Improved system throughput by 18% and reduced latency using advanced caching and orchestration
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <Award className="w-3 h-3" />
-                        Google AI Backend Excellence Award 2022
-                      </div>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-2 py-1 bg-gray-200 text-gray-800 text-xs rounded">TensorFlow</span>
-                      <span className="px-2 py-1 bg-gray-200 text-gray-800 text-xs rounded">PyTorch</span>
-                      <span className="px-2 py-1 bg-gray-200 text-gray-800 text-xs rounded">Kubernetes</span>
-                      <span className="px-2 py-1 bg-gray-200 text-gray-800 text-xs rounded">GCP</span>
-                    </div>
                   </div>
                 </div>
-
-                {/* Previous Role */}
+                {/* Full Stack Developer - IIT Madras */}
                 <div className="relative pl-8 border-l-2 border-gray-400">
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-gray-400 rounded-full"></div>
                   <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h4 className="text-xl font-semibold text-gray-900">Backend Software Engineer, AI</h4>
+                        <h4 className="text-xl font-semibold text-gray-900">Full Stack Developer</h4>
                         <p className="text-gray-600 font-medium flex items-center gap-2">
                           <Building className="w-4 h-4" />
-                          Meta Reality Labs
+                          IIT Madras
                         </p>
+                        <span className="text-xs text-gray-500">Chennai</span>
                       </div>
-                      <Badge variant="outline" className="text-xs">2018-2020</Badge>
+                      <Badge variant="outline" className="text-xs">Jan 2024 - April 2024</Badge>
                     </div>
                     <p className="text-sm text-gray-700 mb-4">
-                      Built and maintained backend APIs and real-time data pipelines for AR/VR AI features. Supported scalable model deployment and monitoring in production environments.
+                      Entrusted with the development of a website for students and mentors on scale. Developed and deployed the application from scratch.
                     </p>
-                    <div className="space-y-2 mb-4">
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <Rocket className="w-3 h-3" />
-                        Shipped 3 major backend features supporting AR to 100M+ users
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <Code className="w-3 h-3" />
-                        Reduced backend API latency by 40% through infra optimizations
-                      </div>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-2 py-1 bg-gray-200 text-gray-800 text-xs rounded">Computer Vision</span>
-                      <span className="px-2 py-1 bg-gray-200 text-gray-800 text-xs rounded">OpenCV</span>
-                      <span className="px-2 py-1 bg-gray-200 text-gray-800 text-xs rounded">PyTorch</span>
-                    </div>
                   </div>
                 </div>
-
-                {/* Internship */}
+                {/* Assistant Backend Engineer - Ascendeum Pvt Ltd */}
                 <div className="relative pl-8 border-l-2 border-gray-300">
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-gray-300 rounded-full"></div>
                   <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h4 className="text-xl font-semibold text-gray-900">Backend Engineering Intern (AI)</h4>
+                        <h4 className="text-xl font-semibold text-gray-900">Assistant Backend Engineer</h4>
                         <p className="text-gray-600 font-medium flex items-center gap-2">
                           <Building className="w-4 h-4" />
-                          DeepMind
+                          Ascendeum Pvt Ltd
                         </p>
+                        <span className="text-xs text-gray-500">Delhi</span>
                       </div>
-                      <Badge variant="outline" className="text-xs">Summer 2017</Badge>
+                      <Badge variant="outline" className="text-xs">May 2023 - Jan 2024</Badge>
                     </div>
                     <p className="text-sm text-gray-700 mb-4">
-                      Developed backend tools and infra for reinforcement learning experiments and large-scale data collection. Enabled reproducible research and robust data pipelines.
+                      Took responsibility to fix various bugs and optimizing the api performance for scale improving the overall efficiency by 15%
                     </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-2 py-1 bg-gray-200 text-gray-800 text-xs rounded">Reinforcement Learning</span>
-                      <span className="px-2 py-1 bg-gray-200 text-gray-800 text-xs rounded">Game Theory</span>
+                  </div>
+                </div>
+                {/* Python Developer - NSPlus Technologies Pvt Ltd */}
+                <div className="relative pl-8 border-l-2 border-gray-200">
+                  <div className="absolute -left-2 top-0 w-4 h-4 bg-gray-200 rounded-full"></div>
+                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h4 className="text-xl font-semibold text-gray-900">Python Developer</h4>
+                        <p className="text-gray-600 font-medium flex items-center gap-2">
+                          <Building className="w-4 h-4" />
+                          NSPlus Technologies Pvt Ltd
+                        </p>
+                        <span className="text-xs text-gray-500">Bangalore</span>
+                      </div>
+                      <Badge variant="outline" className="text-xs">Oct 2021 - April 2023</Badge>
                     </div>
+                    <p className="text-sm text-gray-700 mb-4">
+                      Tasked with full-stack development of a resume matching algorithm for a specified JD in one project and integration of a backend API in another.
+                    </p>
                   </div>
                 </div>
               </div>

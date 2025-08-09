@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -25,12 +26,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <motion.div 
-            className="text-lg font-bold tracking-wider"
-            whileHover={{ scale: 1.05 }}
-          >
-            GK.
-          </motion.div>
+          <Link href="/" passHref legacyBehavior>
+            <motion.a 
+              className="text-lg font-bold tracking-wider cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+            >
+              GK.
+            </motion.a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide">

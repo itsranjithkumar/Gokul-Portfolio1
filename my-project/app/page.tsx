@@ -137,8 +137,8 @@ export default function Portfolio() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 0.2 }}
               >
-                FULL<br />
-                STACK<br />
+                AI<br />
+                BACKEND<br />
                 <span className="text-gray-400">DEVELOPER</span>
               </motion.h1>
 
@@ -165,17 +165,17 @@ export default function Portfolio() {
                     {
                       title: 'GitHub',
                       icon: <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-                      href: 'https://github.com/your-github',
+                      href: 'https://github.com/gokul-1998',
                     },
                     {
                       title: 'LinkedIn',
                       icon: <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-                      href: 'https://linkedin.com/in/your-linkedin',
+                      href: 'https://www.linkedin.com/in/gokulakrishnan-muthusamy-141a78201',
                     },
                     {
                       title: 'Email',
                       icon: <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-                      href: 'mailto:gokulkrishan@gmail.com',
+                      href: 'mailto:gokulakrishnanm1998@gmail.com',
                     },
                   ]}
                 />
@@ -193,8 +193,8 @@ export default function Portfolio() {
                 {/* Profile Image Container */}
                 <div className="relative w-80 h-96 lg:w-96 lg:h-[500px] overflow-hidden rounded-2xl shadow-2xl">
                   <Image
-                    src="/gokul.png"
-                    alt="GokulKrishan"
+                    src="/gokul1.png"
+                    alt="GokulKrishnan"
                     fill
                     className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                     priority
@@ -213,7 +213,7 @@ export default function Portfolio() {
                     GokulKrishan
                   </h2>
                   <p className="text-sm text-gray-600 mt-2 font-medium tracking-wide">
-                    FULL STACK DEVELOPER
+                    AI BACKEND DEVELOPER
                   </p>
                 </motion.div>
 
@@ -257,10 +257,10 @@ export default function Portfolio() {
                   AVAILABLE FOR FREELANCE
                 </div>
                 <a 
-                  href="mailto:gokulkrishan@gmail.com" 
+                  href="mailto:gokulakrishnanm1998@gmail.com" 
                   className="text-sm font-medium hover:text-gray-600 transition-colors underline decoration-2 underline-offset-4"
                 >
-                  GOKULKRISHAN@GMAIL.COM
+                  gokulakrishnanm1998@gmail.com
                 </a>
               </motion.div>
             </div>

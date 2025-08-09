@@ -119,7 +119,7 @@ export default function Component() {
         transition={{ duration: 1.2, ease: 'easeOut' }}
       >
         <Navbar />
-        <div className="min-h-screen bg-white overflow-hidden">
+        <div className="min-h-screen bg-white overflow-hidden pt-28">
       {/* Animated Background Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <div 
