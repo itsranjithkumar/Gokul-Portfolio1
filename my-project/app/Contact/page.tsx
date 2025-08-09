@@ -43,7 +43,7 @@ export default function ContactForm() {
         </div>
 
         {/* Form Card */}
-        <Card className="border border-gray-200 shadow-lg">
+        <Card className="border-4 border-black rounded-2xl shadow-[8px_8px_0_0_rgba(0,0,0,0.18)] bg-white">
           <CardContent className="p-8 md:p-12">
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Name and Email Row */}
