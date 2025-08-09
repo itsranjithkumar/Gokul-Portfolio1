@@ -3,7 +3,7 @@ import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Award, Brain, Database, Mail, Zap, Code, TrendingUp, Briefcase, Star, GraduationCap, Building, Rocket } from 'lucide-react'
+import { Award, Brain, Database, Mail, Zap, Code, TrendingUp, Briefcase, Star, GraduationCap, Building, Rocket, ArrowRight } from 'lucide-react'
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect"
 import { PointerAlex } from "./PointerAlex"
 import Navbar from "@/components/ui/Navbar";
@@ -378,15 +378,19 @@ export default function Component() {
               <CardContent className="p-0 space-y-4">
                 <div className="space-y-3">
                   <div className="flex items-center">
+  <ArrowRight className="w-4 h-4 mr-2 text-gray-400" />
   <span className="text-sm text-gray-700">API Development (REST/gRPC)</span>
 </div>
                   <div className="flex items-center">
+  <ArrowRight className="w-4 h-4 mr-2 text-gray-400" />
   <span className="text-sm text-gray-700">Distributed Systems</span>
 </div>
                   <div className="flex items-center">
+  <ArrowRight className="w-4 h-4 mr-2 text-gray-400" />
   <span className="text-sm text-gray-700">Cloud Infrastructure (AWS/GCP)</span>
 </div>
                   <div className="flex items-center">
+  <ArrowRight className="w-4 h-4 mr-2 text-gray-400" />
   <span className="text-sm text-gray-700">MLOps & Automation</span>
 </div>
                 </div>
@@ -404,15 +408,19 @@ export default function Component() {
               <CardContent className="p-0 space-y-4">
                 <div className="space-y-3">
                   <div className="flex items-center">
+  <ArrowRight className="w-4 h-4 mr-2 text-gray-400" />
   <span className="text-sm text-gray-700">Database Design</span>
 </div>
                   <div className="flex items-center">
+  <ArrowRight className="w-4 h-4 mr-2 text-gray-400" />
   <span className="text-sm text-gray-700">Streaming Data Pipelines</span>
 </div>
                   <div className="flex items-center">
+  <ArrowRight className="w-4 h-4 mr-2 text-gray-400" />
   <span className="text-sm text-gray-700">Big Data (Spark, Kafka)</span>
 </div>
                   <div className="flex items-center">
+  <ArrowRight className="w-4 h-4 mr-2 text-gray-400" />
   <span className="text-sm text-gray-700">Monitoring & Observability</span>
 </div>
                 </div>
@@ -430,15 +438,19 @@ export default function Component() {
               <CardContent className="p-0 space-y-4">
                 <div className="space-y-3">
                   <div className="flex items-center">
+  <ArrowRight className="w-4 h-4 mr-2 text-gray-400" />
   <span className="text-sm text-gray-700">Python</span>
 </div>
                   <div className="flex items-center">
+  <ArrowRight className="w-4 h-4 mr-2 text-gray-400" />
   <span className="text-sm text-gray-700">Kubernetes & Docker</span>
 </div>
                   <div className="flex items-center">
+  <ArrowRight className="w-4 h-4 mr-2 text-gray-400" />
   <span className="text-sm text-gray-700">CI/CD & DevOps</span>
 </div>
                   <div className="flex items-center">
+  <ArrowRight className="w-4 h-4 mr-2 text-gray-400" />
   <span className="text-sm text-gray-700">System Design</span>
 </div>
                 </div>

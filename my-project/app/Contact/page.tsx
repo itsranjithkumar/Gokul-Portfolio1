@@ -34,7 +34,7 @@ export default function ContactForm() {
       <div className="w-full max-w-2xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-light text-black mb-4 tracking-tight">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-black text-black mb-6 tracking-tight leading-none">
             Contact Us
           </h1>
           <p className="text-lg text-gray-600 font-light">

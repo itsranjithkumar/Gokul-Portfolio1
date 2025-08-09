@@ -29,7 +29,7 @@ export default function Navbar() {
             className="text-lg font-bold tracking-wider"
             whileHover={{ scale: 1.05 }}
           >
-            MSR.
+            GK.
           </motion.div>
 
           {/* Desktop Navigation */}
